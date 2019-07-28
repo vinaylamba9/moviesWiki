@@ -1,0 +1,33 @@
+<div class="container">
+    <form class=" border border-light p-5" action="#!" [formGroup]="form" (submit)="onSaveMovie()">
+
+        <p class="h4 mb-4">{{MovieState}}</p>
+
+        <input type="text" id="defaultContactFormName" formControlName="name" class="form-control mb-4" placeholder="Movie Name">
+
+        <input type="number" min="1900" max="2019" step="1" formControlName="year" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Release Year">
+
+        <mat-form-field>
+          <mat-label>Cast Members</mat-label>
+            <mat-select formControlName="cast" multiple>
+              <mat-option *ngFor="let castname of castList" [value]="castname">{{castname}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div style="margin: 8px;margin-right:15px;margin-bottom: -10px;display: inline-flex;">
+          <button class="btn btn-success" (click)="openDialog()" style="border: 1px solid black;"><i class="material-icons" style="font-size:18px;vertical-align: text-bottom;">add</i>Actor</button>&nbsp;&nbsp;
+        </div><br><br>
+        <div class="form-group">
+            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" formControlName="story" rows="3" placeholder="Story"></textarea>
+        </div>
+
+        <div class="custom-control custom-checkbox mb-4">
+          <!-- <input type="file" accept="" #filePicker (change)="onImagePicked($event)" formControlName="poster"> -->
+          <button mat-stroked-button type="button" (click)="filePicker.click()">Pick Image</button>
+          &nbsp;<label style="color:red;">Image Size must be <75KB</label>
+          <input type="file" style="visibility: hidden;" accept="image/jpg" #filePicker (change)="onImagePicked($event)">
+        </div>
+
+        <button class="btn btn-info btn-block" style="font-size: 18px;" type="submit">SAVE</button>
+    </form>
+</div>

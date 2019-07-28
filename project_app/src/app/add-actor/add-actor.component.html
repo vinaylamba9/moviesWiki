@@ -1,0 +1,23 @@
+<div class="container">
+  <form class=" border border-light p-5" action="#!" [formGroup]="form" (submit)="onSaveActor()">
+
+      <p class="h4 mb-4">{{ActorState}}</p>
+
+      <input type="text" id="defaultContactFormName" class="form-control mb-4" formControlName="name" placeholder="Name">
+
+      <mat-radio-group formControlName="gender" [(ngModel)]="gender">
+        <div *ngFor="let gender of genderArray">
+        <mat-radio-button value="{{gender}}" >{{gender}}</mat-radio-button>
+      </div>
+      </mat-radio-group>
+
+<br>
+      <div class="form-group">
+          <textarea class="form-control rounded-0" formControlName="bio" id="exampleFormControlTextarea2" rows="3" placeholder="Bio Data"></textarea>
+      </div>
+<br>
+      <label><input type="date" value="2019-07-28" formControlName="dob" (change)="dobChangeHandler($event)"> &nbsp;&nbsp;Enter Date of Birth</label>
+<br><br>
+      <button class="btn btn-info btn-block" style="font-size: 18px;color:red;"  type="submit">SAVE</button>
+  </form>
+</div>

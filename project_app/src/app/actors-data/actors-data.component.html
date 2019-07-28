@@ -1,0 +1,19 @@
+<div *ngFor="let actorData of actor">
+  <br>
+  <div class="container">
+<div class="card text-center">
+  <div style="color: #ff5e00; font-size: 20px; font-weight: bold;padding-bottom: 0px;padding-right: 0px;" class="card-header">
+    {{actorData.name}}
+    <button class="btn btn-danger" (click)="onDelete(actorData.id)" style="float: right;"><i class="material-icons">delete</i></button>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Bio Data</h5>
+    <p class="card-text">{{actorData.bio}}</p>
+    <a href="#" class="btn btn-primary" [routerLink]="['/edit',actorData.id]"><b>Edit</b></a>
+  </div>
+  <div class="card-footer text-muted">
+    <p style="display: inline;">{{actorData.dob}}</p>&nbsp;&nbsp; <p style="display: inline;">{{actorData.gender}}</p>
+  </div>
+</div>
+</div>
+</div>

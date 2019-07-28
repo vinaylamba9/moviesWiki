@@ -1,0 +1,41 @@
+<html>
+<head>
+<style>
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+</style>
+</head>
+<body>
+  <div style="text-align: right;margin: 8px;margin-right:15px;margin-bottom: -10px;">
+    <button class="btn btn-success" (click)="openDialog()"  style="border: 1px solid black;"><i class="material-icons" style="font-size:18px;vertical-align: text-bottom;">add</i>Actor</button>&nbsp;&nbsp;
+    <button class="btn btn-danger" (click)="navigateMovie()" style="border: 1px solid black;"><i class="material-icons" style="font-size:18px;vertical-align: text-bottom;">add</i>Movie</button>
+    </div>
+<div class="container-fluid" *ngFor="let movie of movies">
+  <div class="row">
+        <div class="col-12 mt-3">
+            <div class="card">
+                <div class="card-horizontal">
+                    <div class="img-square-wrapper">
+                        <img class="" [src] = 'sanitizer.bypassSecurityTrustResourceUrl(movie.poster)' style="width: 100px; height: 150px;margin:20px;" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 style="color:#00bb00;display:inline;" class="card-title"><strong>{{movie.year}}</strong></h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="color:orange;display:inline;vertical-align:text-bottom;"><b>9.5</b></p><p style="color:orange;display:inline;vertical-align:text-bottom;"><b>/10</b></p>
+                        <h4 class="card-title"><b>{{movie.name}}</b></h4>
+                        <p class="card-text">{{movie.story}}</p>
+                    </div>
+                    <div style="margin-top: 15px;margin-right: 15px;">
+                      <button  class="btn btn-primary"><i class="material-icons" [routerLink]="['/editMovie',movie.id]" style="float:right;">edit</i></button>
+                      <button class="btn btn-danger"><i class="material-icons" (click)="onDelete(movie.id)" style="float:right;">delete</i></button>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted" style="font-size: 15px;"><b>Cast: </b><i *ngFor="let castactor of movie.cast">&nbsp;&nbsp;{{castactor}}&nbsp;&nbsp;&nbsp;&nbsp; </i></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
