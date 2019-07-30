@@ -9,8 +9,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser
 
 @Component({
   selector: 'app-section',
-  templateUrl: './section.component.html',
-  styleUrls: ['./section.component.css']
+  templateUrl: './section.component.html'
 })
 export class SectionComponent implements OnInit, OnDestroy {
 
