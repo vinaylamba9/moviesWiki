@@ -6,8 +6,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-actors-data',
-  templateUrl: './actors-data.component.html',
-  styleUrls: ['./actors-data.component.css']
+  templateUrl: './actors-data.component.html'
 })
 export class ActorsDataComponent implements OnInit,OnDestroy {
 
