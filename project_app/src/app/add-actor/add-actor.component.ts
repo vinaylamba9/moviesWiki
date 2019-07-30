@@ -7,8 +7,7 @@ import { MatDialog, MatRadioButton } from '@angular/material';
 
 @Component({
   selector: 'app-add-actor',
-  templateUrl: './add-actor.component.html',
-  styleUrls: ['./add-actor.component.css']
+  templateUrl: './add-actor.component.html'
 })
 export class AddActorComponent implements OnInit {
 
