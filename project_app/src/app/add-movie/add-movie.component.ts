@@ -11,8 +11,7 @@ import { Actor } from '../actor.model';
 
 @Component({
   selector: 'app-add-movie',
-  templateUrl: './add-movie.component.html',
-  styleUrls: ['./add-movie.component.css']
+  templateUrl: './add-movie.component.html'
 })
 export class AddMovieComponent implements OnInit, OnDestroy {
 
